@@ -9,13 +9,13 @@ import { BsFillTrashFill } from "react-icons/bs";
 export default function Home() {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
-      axios.get('http://localhost:3001/get')
+      axios.get('https://80678df4-37e9-4336-8513-a81faa7c7086-00-r7668woiy6sm.sisko.replit.dev/get')
       .then(result => setTodos(result.data))
       .catch(err => console.log(err))
   },[])
 
    const handleEdit = (id) => {
-     axios.put('http://localhost:3001/update/'+id)
+     axios.put('https://80678df4-37e9-4336-8513-a81faa7c7086-00-r7668woiy6sm.sisko.replit.dev/update/'+id)
       .then(result => {
         location.reload();
       })
@@ -23,7 +23,7 @@ export default function Home() {
    }
 
    const handleDelete = (id) => {
-    axios.delete('http://localhost:3001/delete/'+id)
+    axios.delete('https://80678df4-37e9-4336-8513-a81faa7c7086-00-r7668woiy6sm.sisko.replit.dev/delete/'+id)
       .then(result => {
         location.reload();
       })
