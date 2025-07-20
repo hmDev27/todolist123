@@ -7,7 +7,9 @@ import axios from 'axios'
 export default function Create() {
   const [task, setTask] = useState(); //COMPONENT STATE
   const handleAdd = () => {
-        axios.post('http://localhost:3001/add', {task: task})
+        // ✅ Live backend hosted on Cyclic
+axios.post('https://todo-api-xyz.cyclic.app/add', { task: task })
+
         .then(result => {
           location.reload()
         })
